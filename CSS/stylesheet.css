@@ -1,0 +1,175 @@
+img.chaordic_logo{
+    display: block;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1%;
+    padding-bottom: 0.5%;
+}
+
+p.shortener_intro_text{
+    font-size: 32px;
+}
+
+li.top_5_item{
+    display: block;
+    list-style-type: none;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: 2px solid #EEE;
+}
+
+li.last_top_5_item{
+    display: block;
+    list-style-type: none;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 10%;
+    padding-top: 10px;
+}
+
+.arrow_down{
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 50px solid white;
+    left:0;
+    right:0;
+    margin:auto;
+}
+
+span.top_5_hits{
+    font-size: 24px;
+    font-weight: 400;
+    float:right;
+    color: #777;
+}
+
+body{
+  background-color: white;
+  font-family: 'Roboto';
+}
+
+h1{
+    font-family: 'Roboto Slab';
+    font-size: 72px;
+}
+
+h2{
+    font-family: 'Roboto Slab';
+    font-weight: 400;
+    font-size: 60px;
+}
+
+h3{
+    font-family: 'Roboto Slab';
+    font-weight: 400;
+    font-size: 60px;
+}
+
+h4{
+    font-family: 'Roboto Slab';
+    font-weight: 400;
+    font-size: 60px;
+    background-color: white;
+    border: 1px solid #777;
+    border-radius: 5px;
+    width: 17%;
+    height: auto;
+    left:0;
+    right:0;
+    margin:auto;
+}
+
+main {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input{
+    background: none;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-color: #FF6E15;
+    border-bottom-width: medium;
+    width: 35%;
+    height: 40px;
+}
+
+ul{
+    width: 40%;
+    margin: auto;
+}
+
+#shortener_container{
+    text-align: center;
+    padding-bottom: 13%;
+    padding-top: 15%;
+    background-image: url("../Assets/background-home.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+}
+
+#shortener_text{
+    text-align: center;
+    color: white;
+}
+
+#input_field{
+    color: #FF6E15;
+    font-size: 28px;
+    line-height: 64px;
+    padding-bottom: 4px;
+}
+
+#shorten_button{
+    color: white;
+    font-weight: bolder;
+    font-size: 24px;
+    text-align: center;
+    background-color: #FF6E15;
+    border: none;
+    height: 60px;
+    width: 10%;
+    padding-bottom: 8px;
+    padding-top: 15px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+#input_container{
+    display: block;
+    padding-top: 5%;
+    font-size: 28px;
+    text-align: center;
+}
+
+#top_5_container{
+    text-align: center;
+    color: #AA1423;
+}
+
+#hits_container{
+    background-color: #EEE;
+}
+input::-webkit-input-placeholder {
+    color: #FF6E15;
+    font-size: 28px;
+}
+
+input:focus{
+    outline: none;
+}
+
+button:focus{
+    outline: none;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+	<!--TODO: verificar a compatibilidade com os 3 principais browsers -->
+	<head>
+		<meta charset="UTF-8">
+
+    	<link type="text/css" rel="stylesheet" href="CSS/stylesheet.css"/>
+		<!-- Fonts used by the CSS -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
+
+		<title>Chaordic Intern Challenge</title>
+	</head>
+
+	<body>
+	  <header>
+		  <div id="logo">
+		  	<img class="chaordic_logo" src="Assets/logo-chaordic.png">
+	  	 </div>
+	  </header>
+
+	  <main>
+			<div id="shortener_container">
+				<div id="shortener_text">
+					<h1>
+						Encurte seus links.
+					</h1>
+					<p class="shortener_intro_text">
+						Links são longos. Encurte os links que você deseja compartilhar,
+						<br>
+						e acompanhe enquanto viajam pela internet.
+					</p>
+					<div id="input_container">
+
+						<input type="txt" placeholder="Cole o seu link aqui"
+							onfocus="this.placeholder = ''"
+							onblur="this.placeholder = 'Cole o seu link aqui'"
+							id="input_field">
+ 						<!--TODO: implementar a funcionalidade do botao -->
+						<button type="button"
+							onclick="shorten()" id="shorten_button">
+							ENCURTAR <!-- TODO: tornar este texto responsivo -->
+						</button>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+
+	<div id="top_5_container">
+		<div id="top_5_header">
+			<h2>
+				TOP 5
+			</h2>
+			<ul>
+				<!-- TODO: implementar o top 5 com base no JSON que foi provido -->
+                <li class="top_5_item"><strong>item 1</strong><span class="top_5_hits">test</span></li>
+				<li class="top_5_item"><strong>item 2</strong><span class="top_5_hits">test</span></li>
+				<li class="top_5_item"><strong>item 3</strong><span class="top_5_hits">test</span></li>
+				<li class="top_5_item"><strong>item 4</strong><span class="top_5_hits">test</span></li>
+				<li class="last_top_5_item"><strong>item 5</strong><span class="top_5_hits">test</span></li>
+			</ul>
+		</div>
+		<div id="hits_container">
+			<div class="arrow_down"></div>
+			<h3>HITS</h3>
+			<h4>35.713.571</h4> <!-- TODO: tornar este texto responsivo -->
+			<span>Cliques em links</span>
+		</div>
+	</div>
+	<div>
+		this will be the footer
+	</div>
+</html>
