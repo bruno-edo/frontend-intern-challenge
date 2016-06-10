@@ -8,6 +8,12 @@ img.chaordic_logo{
     padding-bottom: 0.5%;
 }
 
+img.footer_image{
+    float: right;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
 p.shortener_intro_text{
     font-size: 32px;
 }
@@ -33,6 +39,18 @@ li.last_top_5_item{
     padding-top: 10px;
 }
 
+span.top_5_hits{
+    font-size: 24px;
+    font-weight: 400;
+    float:right;
+    color: #777;
+}
+
+span.footer_text{
+    color: #AA1423;
+    font-size: 26px;
+}
+
 .arrow_down{
     width: 0;
     height: 0;
@@ -44,11 +62,33 @@ li.last_top_5_item{
     margin:auto;
 }
 
-span.top_5_hits{
-    font-size: 24px;
+.hits_text{
+    font-size: 22px;
     font-weight: 400;
-    float:right;
     color: #777;
+    padding-bottom: 5%;
+}
+
+.fading_text{
+    opacity: 1;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+}
+
+.input_white_text{
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 64px;
+    padding-bottom: 4px;
+}
+
+.input_field{
+    color: #FF6E14;
+    font-size: 28px;
+    line-height: 64px;
+    padding-bottom: 4px;
 }
 
 body{
@@ -79,7 +119,7 @@ h4{
     font-size: 60px;
     background-color: white;
     border: 1px solid #777;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 17%;
     height: auto;
     left:0;
@@ -97,15 +137,23 @@ input{
     border-top: 0;
     border-right: 0;
     border-left: 0;
-    border-color: #FF6E15;
+    border-color: #FF6E14;
+    -moz-border-bottom-colors: #FF6E14;
     border-bottom-width: medium;
     width: 35%;
     height: 40px;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
 }
 
 ul{
     width: 40%;
     margin: auto;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
 }
 
 #shortener_container{
@@ -124,19 +172,12 @@ ul{
     color: white;
 }
 
-#input_field{
-    color: #FF6E15;
-    font-size: 28px;
-    line-height: 64px;
-    padding-bottom: 4px;
-}
-
 #shorten_button{
     color: white;
     font-weight: bolder;
     font-size: 24px;
     text-align: center;
-    background-color: #FF6E15;
+    background-color: #FF6E14;
     border: none;
     height: 60px;
     width: 10%;
@@ -161,10 +202,29 @@ ul{
 #hits_container{
     background-color: #EEE;
 }
-input::-webkit-input-placeholder {
-    color: #FF6E15;
+
+#footer{
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 1%;
+}
+
+input::-webkit-input-placeholder{
+    color: #FF6E14;
     font-size: 28px;
 }
+
+
+input::-moz-placeholder{
+    color: #FF6E14;
+    font-size: 28px;
+}
+
+input:-moz-placeholder{
+    color: #FF6E14;
+    font-size: 28px;
+}
+
 
 input:focus{
     outline: none;
