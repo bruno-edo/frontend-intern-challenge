@@ -120,6 +120,7 @@ var buttonPressed = function()
             var xButton = document.getElementById('hidden_text_button');
             buttonText.nodeValue = 'COPIAR';
             shortenButton.value = 'copiar';
+            console.log(inputField);
             inputField.setAttribute("class", "input_white_text");
             inputField.setAttribute("className", "input_white_text");
 
@@ -135,7 +136,7 @@ var buttonPressed = function()
     //Button is set to copy
     else
     {
-        //Here the text would be copied to the clipboard (working on chrome)
+        //Here the text would be copied to the clipboard
         var range = document.createRange();
         range.selectNode(inputField);
         window.getSelection().addRange(range);

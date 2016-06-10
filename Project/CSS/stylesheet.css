@@ -171,7 +171,7 @@ a{
     text-align: center;
     padding-bottom: 13%;
     padding-top: 15%;
-    background-image: url("Assets/background-home.jpg");
+    background-image: url("./../../Assets/background-home.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     align-items: center;

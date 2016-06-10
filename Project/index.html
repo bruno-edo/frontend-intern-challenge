@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt">
-	<!--TODO: verificar a compatibilidade com os 3 principais browsers -->
 	<head>
 		<meta charset="UTF-8">
 
@@ -15,12 +14,12 @@
 	<body>
 	  <header>
 		  <div id="logo">
-		  	<img class="chaordic_logo" src="Assets/logo-chaordic.png">
+		  	<img class="chaordic_logo" src="./../Assets/logo-chaordic.png">
 	  	 </div>
 	  </header>
 
 	  <main>
-			<div id="shortener_container">
+			<section id="shortener_container">
 				<div id="shortener_text">
 					<h1>
 						Encurte seus links.
@@ -45,9 +44,9 @@
 						<div class="line_top"></div>
 					</div>
 				</div>
-			</div>
-		</main>
-		<div id="top_5_container">
+			</section>
+
+		<section id="top_5_container">
 			<div id="top_5_header">
 				<h2>
 					TOP 5
@@ -57,22 +56,24 @@
 					based on a JSON provided by Chaordic staff -->
 				</div>
 			</div>
-			<div id="hits_container">
+			<section id="hits_container">
 				<div class="arrow_down"></div>
 				<h3>HITS</h3>
 				<h4>35.713.571</h4> <!-- TODO: tornar este texto responsivo -->
 				<p class="hits_text">Cliques em links</p>
-			</div>
-		</div>
-		<div>
-			<footer id="footer">
-				<span class="footer_text">chr.dc</span>
-				<a href = "http://www.facebook.com"><img src="./Assets/icon-facebook.png" class="footer_image"></a>
-				<a href = "http://www.twitter.com"><img src="./Assets/icon-twitter.png" class="footer_image"></a>
-			</footer>
+			</section>
+		</section>
+	</main>
 
-		</div>
+	<section>
+		<footer id="footer">
+			<span class="footer_text">chr.dc</span>
+			<a href = "http://www.facebook.com"><img src="./../Assets/icon-facebook.png" class="footer_image"></a>
+			<a href = "http://www.twitter.com"><img src="./../Assets/icon-twitter.png" class="footer_image"></a>
+		</footer>
+	</section>
 
-		<script type="text/javascript" src="Javascript/script.js"></script>
+	<script type="text/javascript" src="Javascript/script.js"></script>
+
 	</body>
 </html>
