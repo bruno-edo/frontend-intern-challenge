@@ -211,6 +211,8 @@ a{
 }
 
 #hits_container{
+    text-align: center;
+    color: #AA1423;
     background-color: #EEE;
 }
 

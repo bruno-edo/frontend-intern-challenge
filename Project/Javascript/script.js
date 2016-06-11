@@ -1,7 +1,5 @@
-/*
-    This function will create the top 5 list based on the JSON file provided
-    by the Chaordic staff.
-*/
+
+//Opens a JSON file and callbacks a function
 var getJSON = function(url, callback)
 {
     //Will open the JSON file and load its contents
@@ -23,16 +21,24 @@ var getJSON = function(url, callback)
     xmlhttp.send(null);
 }
 
-//Adds the list to the top_5_list <div>
+/*
+    This function will create the top 5 list based on the JSON file provided
+    by the Chaordic staff and add it to the the top_5_list <div>
+*/
 var buildTop5List = function(objectArray)
 {
     //Sorted
     objectArray = sortList(objectArray);
+    var len = objectArray.length;
+    if(len > 5)
+    {
+        len = 5;
+    }
     //The div that will contain the list
     listContainer = document.getElementById('top_5_list');
     //The list node
     listNode = document.createElement('ul');
-    for(var i = 0; i < 5; i++)
+    for(var i = 0; i < len; i++)
     {
         //Data that will be used to create the table
         var url = objectArray[i].url;
@@ -40,7 +46,7 @@ var buildTop5List = function(objectArray)
         var hits = formatNumber(objectArray[i].hits.toString());
 
         /*
-            In the next section the HTML nodes that will create the list
+            In the next section the HTML nodes, that will create the list,
             will be built and combined in the correct order.
 
             Final format example:
@@ -97,6 +103,7 @@ var sortList = function(list)
 }
 
 //Makes the shorten button become a copy button and the URL to become "shortened"
+//Also fades some components and reveals others after timeout.
 var buttonPressed = function()
 {
     var inputField = document.getElementById('input_field');
@@ -136,7 +143,7 @@ var buttonPressed = function()
     //Button is set to copy
     else
     {
-        //Here the text would be copied to the clipboard
+        //This code section works in chrome but not in FF
         var range = document.createRange();
         range.selectNode(inputField);
         window.getSelection().addRange(range);
@@ -160,5 +167,10 @@ var formatNumber = function(number){
 }
 
 //Event listeners
-document.addEventListener('DOMContentLoaded', getJSON("https://raw.githubusercontent.com/chaordic/frontend-intern-challenge/master/Assets/urls.json", buildTop5List), false);
+document.addEventListener('DOMContentLoaded',
+                        getJSON(
+                        "https://raw.githubusercontent.com/chaordic/frontend-intern-challenge/master/Assets/urls.json",
+                        buildTop5List),
+                        false);
+
 document.getElementById('shorten_button').addEventListener('click', buttonPressed, false);
