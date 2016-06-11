@@ -11,11 +11,9 @@
      - O botão 'X' teve sua funcionalidade implementada;
      - Utilização de Sass para geração do CSS.
 
-     Os arquivos criados estão dentro da pasta "Project", a qual foi dividida nas
-sub-pastas pertinentes.
+Os arquivos criados estão dentro da pasta "Project", a qual foi dividida nas sub-pastas pertinentes.
 
-    Para o funcionamento do Javascript foram adicionados listeners nos objetos
-que apresentam algum comportamento que necessite de interação com o Javascript.
+Para o funcionamento do Javascript foram adicionados listeners nos objetos que apresentam algum comportamento que necessite de interação com o Javascript.
 
 
 Junho/2016 - Florianópolis
