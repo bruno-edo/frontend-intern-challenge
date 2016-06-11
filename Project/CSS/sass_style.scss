@@ -1,0 +1,244 @@
+$chaordic_red: #AA1423;
+$support_text_grey: #777;
+$background_white: #EEE;
+$url_shortener_orange: #FF6E14;
+
+$fade_time: 0.5s;
+
+@mixin fade {
+    -webkit-transition: opacity $fade_time;
+    -moz-transition: opacity $fade_time;
+    transition: opacity $fade_time;
+}
+
+@mixin set_padding_up_down($top, $bottom) {
+    padding-top: $top;
+    padding-bottom: $bottom;
+}
+
+@mixin set_padding_sides($left, $right) {
+    padding-left: $left;
+    padding-right: $right;
+}
+
+.top_5_hits {
+  font-size: 24px;
+  font-weight: 400;
+  float: right;
+  color: $support_text_grey;
+}
+
+.footer_text {
+  color: $chaordic_red;
+  font-size: 26px;
+}
+
+.arrow_down {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 50px solid white;
+  margin: auto;
+}
+
+.line_top {
+  width: 35%;
+  border-top: 5px solid;
+  border-color: $url_shortener_orange;
+  -moz-border-top-colors: $url_shortener_orange;
+  border-top-width: medium;
+  margin-left: 27%;
+  margin-top: -4px;
+}
+
+.hits_text {
+  @include set_padding_up_down(0%, 5%);
+  font-size: 22px;
+  font-weight: 400;
+  color: $support_text_grey;
+}
+
+.fading_text {
+  @include fade;
+  opacity: 1;
+}
+
+.input_white_text {
+  @include set_padding_up_down(0%, 4px);
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 64px;
+}
+
+.input_field {
+  color: $url_shortener_orange;
+  font-size: 28px;
+  line-height: 64px;
+}
+
+.hidden_text_button {
+  @include fade;
+  opacity: 0;
+  background: none;
+  border: none;
+  margin-left: -2%;
+  color: white;
+  font-size: 20px;
+  font-family: 'Roboto';
+  font-weight: bold;
+}
+
+img {
+  &.chaordic_logo {
+    @include set_padding_up_down(1%, 0.5%);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &.footer_image {
+    @include set_padding_sides(1%, 1%);
+    float: right;
+  }
+}
+
+p.shortener_intro_text {
+  font-size: 32px;
+}
+
+li {
+    display: block;
+    list-style-type: none;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    @include set_padding_up_down(10px, 10px);
+
+  &.top_5_item {
+    border-bottom: 2px solid $background_white;
+  }
+}
+
+body {
+  background-color: white;
+  font-family: 'Roboto';
+}
+
+h1 {
+  font-family: 'Roboto Slab';
+  font-size: 72px;
+}
+
+h2, h3 {
+  font-family: 'Roboto Slab';
+  font-weight: 400;
+  font-size: 60px;
+}
+
+h4 {
+  font-family: 'Roboto Slab';
+  font-weight: 400;
+  font-size: 60px;
+  background-color: white;
+  border: 1px solid $support_text_grey;
+  border-radius: 10px;
+  width: 17%;
+  height: auto;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+input {
+  @include fade;
+  background: none;
+  border: 0;
+  width: 35%;
+  height: 40px;
+}
+
+ul {
+  width: 40%;
+  margin: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer {
+  @include set_padding_up_down(0%, 1%);
+  @include set_padding_sides(20%, 20%);
+}
+
+input {
+  &::-moz-placeholder, &:-moz-placeholder {
+    color: $url_shortener_orange;
+    font-size: 28px;
+  }
+  &::-webkit-input-placeholder {
+      color: $url_shortener_orange;
+      font-size: 28px;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  outline: none;
+
+  &:hover {
+    cursor: pointer;
+    cursor: hand;
+  }
+}
+
+#shortener_container {
+  @include set_padding_up_down(13%, 15%);
+  text-align: center;
+  background-image: url("./../../Assets/background-home.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+}
+
+#shortener_text {
+  text-align: center;
+  color: white;
+}
+
+#shorten_button {
+  @include set_padding_up_down(15px, 8px);
+  @include set_padding_sides(5px, 5px);
+  color: white;
+  font-weight: bolder;
+  font-size: 24px;
+  text-align: center;
+  background-color: $url_shortener_orange;
+  border: none;
+  height: 60px;
+  width: 10%;
+}
+
+#input_container {
+  @include set_padding_up_down(5%, 0%);
+  display: block;
+  font-size: 28px;
+  text-align: center;
+}
+
+#top_5_container {
+  @include set_padding_up_down(0%, 5%);
+  text-align: center;
+  color: $chaordic_red;
+}
+
+#hits_container {
+    text-align: center;
+    color: $chaordic_red;
+    background-color: $background_white;
+}

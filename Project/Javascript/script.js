@@ -1,3 +1,13 @@
+/*
+    Javascript code responsible for:
+        - loading the JSON file;
+        - Creating the top 5 list;
+        - Animating the url shortening components;
+        - Changing shortening components behaviours;
+        - Copying shortened url to the clipboard;
+
+        Author: Bruno Eduardo D"Angelo de Oliveira - June 2016
+*/
 
 //Opens a JSON file and callbacks a function
 var getJSON = function(url, callback)
@@ -16,7 +26,6 @@ var getJSON = function(url, callback)
         }
     }
 
-    //Cant grab the file locally because og Chrome's CORS protection
     xmlhttp.open("GET", url, true);
     xmlhttp.send(null);
 }
@@ -34,10 +43,12 @@ var buildTop5List = function(objectArray)
     {
         len = 5;
     }
+
     //The div that will contain the list
-    listContainer = document.getElementById('top_5_list');
+    listContainer = document.getElementById("top_5_list");
+
     //The list node
-    listNode = document.createElement('ul');
+    listNode = document.createElement("ul");
     for(var i = 0; i < len; i++)
     {
         //Data that will be used to create the table
@@ -54,34 +65,35 @@ var buildTop5List = function(objectArray)
         */
 
         //<li>
-        listItem = document.createElement('li');
+        listItem = document.createElement("li");
 
         if (i != 4)
         {
             //<li class="top_5_item">
-            listItem.setAttribute('class', 'top_5_item');
+            listItem.setAttribute("class", "top_5_item");
         }
         else
         {
             //<li class="last_top_5_item">
-            listItem.setAttribute('class', 'last_top_5_item');
+            listItem.setAttribute("class", "last_top_5_item");
         }
 
         //<a href=url>
-        var a = document.createElement('a');
-        att = a.setAttribute('href', url); //The real url
+        var a = document.createElement("a");
+        att = a.setAttribute("href", url); //The real url
 
         //<strong>
-        var strong = document.createElement('strong');
+        var strong = document.createElement("strong");
 
         //<strong>shortUrl</strong>
         strong.appendChild(document.createTextNode(shortUrl)); //text to be displayed
         a.appendChild(strong); //<a href=url><strong>shortUrl
         listItem.appendChild(a); //<li class=.....
 
-        var span = document.createElement('span');
-        span.setAttribute('class', 'top_5_hits')
-        //<span class='top_5_hits'>hits</span>
+        var span = document.createElement("span");
+        span.setAttribute("class", "top_5_hits")
+
+        //<span class="top_5_hits">hits</span>
         span.appendChild(document.createTextNode(hits)); //number of hits
 
         listItem.appendChild(span);
@@ -104,17 +116,17 @@ var sortList = function(list)
 
 //Makes the shorten button become a copy button and the URL to become "shortened"
 //Also fades some components and reveals others after timeout.
-var buttonPressed = function()
+var shortenButtonPressed = function()
 {
-    var inputField = document.getElementById('input_field');
+    var inputField = document.getElementById("input_field");
     //No input, so no point in doing anything
-    if(inputField.value == '' || inputField == null)
+    if(inputField.value == "" || inputField == null)
         return;
 
-    var shortenButton = document.getElementById('shorten_button');
+    var shortenButton = document.getElementById("shorten_button");
 
-    //Button is set to shorten, so here we'll implement the expected behavior
-    if(shortenButton.value == 'encurtar')
+    //Here we"ll implement the URL minification and fade effect
+    if(shortenButton.value == "encurtar")
     {
         //<span> containing the button text
         var spanNode = shortenButton.firstChild.nextElementSibling;
@@ -122,55 +134,98 @@ var buttonPressed = function()
         spanNode.style.opacity = 0;
         inputField.style.opacity = 0;
 
+        //Fade effect
         window.setTimeout(function()
         {
-            var xButton = document.getElementById('hidden_text_button');
-            buttonText.nodeValue = 'COPIAR';
-            shortenButton.value = 'copiar';
-            console.log(inputField);
+            var xButton = document.getElementById("hidden_text_button");
+            buttonText.nodeValue = "COPIAR";
+            shortenButton.value = "copiar";
+
             inputField.setAttribute("class", "input_white_text");
             inputField.setAttribute("className", "input_white_text");
+            inputField.setAttribute("disabled", true);
 
-            inputField.value = 'http://chr.dc/xyzxyz'; //implement real hashing function here?? maybe...
+            inputField.value = "http://chr.dc/xyzxyz"; //implement real hashing function here?? maybe...
             spanNode.style.opacity = 1;
             inputField.style.opacity = 1;
             xButton.style.opacity = 1;
 
         }, 550);
-
     }
 
     //Button is set to copy
     else
     {
-        //This code section works in chrome but not in FF
+        /*This code section works in chrome but not in FF, also a lot of
+        other browsers have problems with the execCommand function(mobile apps
+        also). So it would be best to implement in some other way, but this is
+        just an example of implementation.
+        */
         var range = document.createRange();
         range.selectNode(inputField);
         window.getSelection().addRange(range);
-        document.execCommand('copy');
+        document.execCommand("copy");
         window.getSelection().removeAllRanges();
     }
 
 }
 
 //Adds the thousands separators
-var formatNumber = function(number){
+var formatNumber = function(number)
+{
     if(number.length < 4)
         return number; //Does not need formatting
 
     var rgx = /(\d+)(\d{3})/;
     while (rgx.test(number))
     {
-		number = number.replace(rgx, '$1' + '.' + '$2');
+		number = number.replace(rgx, "$1" + "." + "$2");
     }
     return number;
 }
 
+//The X button was pressed, so the url shortener components have to go back
+//to the initial state.
+var hiddenButtonPressed = function()
+{
+    var shortenButton = document.getElementById("shorten_button");
+
+    if(shortenButton.value == "encurtar")
+        return;
+
+    var inputField = document.getElementById("input_field");
+    var spanNode = shortenButton.firstChild.nextElementSibling;
+    var buttonText = spanNode.firstChild;
+    var xButton = document.getElementById("hidden_text_button");
+
+    inputField.style.opacity = 0;
+    xButton.style.opacity = 0;
+    spanNode.style.opacity = 0;
+
+    window.setTimeout(function()
+    {
+        inputField.value = "";
+        inputField.setAttribute("class", "input_field");
+        inputField.setAttribute("className", "input_field");
+        inputField.removeAttribute("disabled");
+        inputField.blur();
+
+        buttonText.nodeValue = "ENCURTAR";
+        shortenButton.value = "encurtar";
+
+        spanNode.style.opacity = 1;
+        inputField.style.opacity = 1;
+    }, 550);
+
+}
+
 //Event listeners
-document.addEventListener('DOMContentLoaded',
+//Repository JSON was used because of Google Chrome CORS error
+document.addEventListener("DOMContentLoaded",
                         getJSON(
                         "https://raw.githubusercontent.com/chaordic/frontend-intern-challenge/master/Assets/urls.json",
                         buildTop5List),
                         false);
 
-document.getElementById('shorten_button').addEventListener('click', buttonPressed, false);
+document.getElementById("shorten_button").addEventListener("click", shortenButtonPressed, false);
+document.getElementById("hidden_text_button").addEventListener("click", hiddenButtonPressed, false)
