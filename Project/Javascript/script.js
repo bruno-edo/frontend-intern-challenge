@@ -10,7 +10,7 @@
         Author: Bruno Eduardo D"Angelo de Oliveira - June 2016
 
         Obs.: I don't know if I have to or should implement a real URL shortening
-        function here or not.
+        function here or not. For now I will not add it.
 */
 
 //Opens a JSON file and callbacks a function
