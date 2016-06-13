@@ -1,3 +1,4 @@
+
 /*
     Javascript code responsible for:
         - loading the JSON file;
@@ -5,12 +6,7 @@
         - Animating the url shortening components;
         - Changing shortening components behaviours;
         - Copying shortened url to the clipboard;
-        - Calculating number of clicks on links.
-
         Author: Bruno Eduardo D"Angelo de Oliveira - June 2016
-
-        Obs.: I don't know if I have to or should implement a real URL shortening
-        function here or not. For now I will not add it.
 */
 
 //Opens a JSON file and callbacks a function
@@ -34,22 +30,38 @@ var getJSON = function(url, callback)
     xmlhttp.send(null);
 }
 
-/*
-    This function will create the top 5 list based on the JSON file provided
-    by the Chaordic staff and add it to the the top_5_list <div>
-*/
-var buildTop5List = function(objectArray)
+//Builds the page components based on the JSON file passed by Chaordic staff
+var buildComponents = function(jsonList)
 {
-    //Sorted
-    objectArray = sortList(objectArray);
-    var len = objectArray.length;
-    if(len > 5)
+    //Sorts the list
+    jsonList = sortList(jsonList);
+
+    listNode = createTop5List(jsonList, 5);
+    document.getElementById("top_5_list").appendChild(listNode); //Adds the list to the div
+
+    var totalHits = 0;
+    for (var i = 0; i < jsonList.length; i++)
     {
-        len = 5;
+        console.log(jsonList[i].hits);
+        totalHits += jsonList[i].hits;
     }
 
-    //The div that will contain the list
-    listContainer = document.getElementById("top_5_list");
+    totalHits = formatNumber(totalHits.toString());
+
+    document.getElementById("hits_number").textContent = totalHits;
+}
+
+/*
+    This function will create the top 5 list based on the JSON file provided
+    by the Chaordic staff
+*/
+var createTop5List = function(objectArray, listMaxLen)
+{
+    var len = objectArray.length;
+    if(len > listMaxLen)
+    {
+        len = listMaxLen;
+    }
 
     //The list node
     listNode = document.createElement("ul");
@@ -63,7 +75,6 @@ var buildTop5List = function(objectArray)
         /*
             In the next section the HTML nodes, that will create the list,
             will be built and combined in the correct order.
-
             Final format example:
             <li class="top_5_item"><a href=url><strong>shortUrl</strong></a><span class="top_5_hits">hits</span></li>
         */
@@ -104,18 +115,7 @@ var buildTop5List = function(objectArray)
         listNode.appendChild(listItem); //Adds the node to the list
     }
 
-    //Adds the finished list to the div
-    listContainer.appendChild(listNode);
-}
-
-//Sorts list from the biggest to the smallest
-var sortList = function(list)
-{
-    list.sort(function(a, b)
-    {
-        return parseFloat(b.hits) - parseFloat(a.hits);
-    });
-    return list;
+    return listNode
 }
 
 //Makes the shorten button become a copy button and the URL to become "shortened"
@@ -174,20 +174,6 @@ var shortenButtonPressed = function()
 
 }
 
-//Adds the thousands separators
-var formatNumber = function(number)
-{
-    if(number.length < 4)
-        return number; //Does not need formatting
-
-    var rgx = /(\d+)(\d{3})/;
-    while (rgx.test(number))
-    {
-		number = number.replace(rgx, "$1" + "." + "$2");
-    }
-    return number;
-}
-
 //The X button was pressed, so the url shortener components have to go back
 //to the initial state.
 var hiddenButtonPressed = function()
@@ -223,12 +209,37 @@ var hiddenButtonPressed = function()
 
 }
 
+
+//Sorts list from the biggest to the smallest
+var sortList = function(list)
+{
+    list.sort(function(a, b)
+    {
+        return parseFloat(b.hits) - parseFloat(a.hits);
+    });
+    return list;
+}
+
+//Adds the thousands separators
+var formatNumber = function(number)
+{
+    if(number.length < 4)
+        return number; //Does not need formatting
+
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(number))
+    {
+		number = number.replace(rgx, "$1" + "." + "$2");
+    }
+    return number;
+}
+
 //Event listeners
 //Repository JSON was used because of Google Chrome CORS error
 document.addEventListener("DOMContentLoaded",
                         getJSON(
                         "https://raw.githubusercontent.com/chaordic/frontend-intern-challenge/master/Assets/urls.json",
-                        buildTop5List),
+                        buildComponents),
                         false);
 
 document.getElementById("shorten_button").addEventListener("click", shortenButtonPressed, false);
