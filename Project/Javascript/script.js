@@ -5,8 +5,12 @@
         - Animating the url shortening components;
         - Changing shortening components behaviours;
         - Copying shortened url to the clipboard;
+        - Calculating number of clicks on links.
 
         Author: Bruno Eduardo D"Angelo de Oliveira - June 2016
+
+        Obs.: I don't know if I have to or should implement a real URL shortening
+        function here or not.
 */
 
 //Opens a JSON file and callbacks a function
