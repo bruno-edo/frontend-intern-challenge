@@ -22,7 +22,7 @@ $fade_time: 0.5s;
 }
 
 .top_5_hits {
-  font-size: 24px;
+  font-size: 1.3vw;
   font-weight: 400;
   float: right;
   color: $support_text_grey;
@@ -30,31 +30,29 @@ $fade_time: 0.5s;
 
 .footer_text {
   color: $chaordic_red;
-  font-size: 26px;
+  font-size: 1.4vw;
 }
 
 .arrow_down {
   width: 0;
   height: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-top: 50px solid white;
+  border-left: 3vw solid transparent;
+  border-right: 3vw solid transparent;
+  border-top: 3vw solid white;
   margin: auto;
 }
 
 .line_top {
-  width: 35%;
-  border-top: 5px solid;
+  width: 33.5vw;
+  border-top: 0.2vw solid;
   border-color: $url_shortener_orange;
   -moz-border-top-colors: $url_shortener_orange;
-  border-top-width: medium;
-  margin-left: 27%;
   margin-top: -4px;
 }
 
 .hits_text {
   @include set_padding_up_down(0%, 5%);
-  font-size: 22px;
+  font-size: 1.2vw;
   font-weight: 400;
   color: $support_text_grey;
 }
@@ -67,15 +65,13 @@ $fade_time: 0.5s;
 .input_white_text {
   @include set_padding_up_down(0%, 4px);
   color: white;
-  font-size: 28px;
+  font-size: 1.4vw;
   font-weight: bold;
-  line-height: 64px;
 }
 
 .input_field {
   color: $url_shortener_orange;
-  font-size: 28px;
-  line-height: 64px;
+  font-size: 1.4vw;
 }
 
 .hidden_text_button {
@@ -83,9 +79,9 @@ $fade_time: 0.5s;
   opacity: 0;
   background: none;
   border: none;
-  margin-left: -2%;
+  margin-left: -3vw;
   color: white;
-  font-size: 20px;
+  font-size: 1.1vw;
   font-family: 'Roboto';
   font-weight: bold;
 }
@@ -93,8 +89,7 @@ $fade_time: 0.5s;
 img {
   &.chaordic_logo {
     @include set_padding_up_down(1%, 0.5%);
-    display: block;
-    margin-left: auto;
+    margin-left: 49vw;
     margin-right: auto;
   }
   &.footer_image {
@@ -104,16 +99,21 @@ img {
 }
 
 p.shortener_intro_text {
-  font-size: 32px;
+  font-size: 1.65vw;
+}
+
+ul {
+  width: 35vw;
+  margin: auto;
 }
 
 li {
     display: block;
     list-style-type: none;
-    font-size: 24px;
+    font-size: 1.35vw;
     font-weight: bold;
     text-align: left;
-    @include set_padding_up_down(10px, 10px);
+    @include set_padding_up_down(0.5vw, 0.5vw);
 
   &.top_5_item {
     border-bottom: 2px solid $background_white;
@@ -127,39 +127,24 @@ body {
 
 h1 {
   font-family: 'Roboto Slab';
-  font-size: 72px;
+  font-size: 3.7vw;
 }
 
 h2, h3 {
   font-family: 'Roboto Slab';
   font-weight: 400;
-  font-size: 60px;
+  font-size: 3.2vw;
 }
 
 h4 {
   font-family: 'Roboto Slab';
   font-weight: 400;
-  font-size: 60px;
+  font-size: 3.2vw;
   background-color: white;
   border: 1px solid $support_text_grey;
   border-radius: 10px;
   width: 17%;
   height: auto;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-
-input {
-  @include fade;
-  background: none;
-  border: 0;
-  width: 35%;
-  height: 40px;
-}
-
-ul {
-  width: 40%;
   margin: auto;
 }
 
@@ -174,13 +159,20 @@ footer {
 }
 
 input {
+  @include fade;
+  background: none;
+  border: 0;
+  width: 35vw;
+}
+
+input {
   &::-moz-placeholder, &:-moz-placeholder {
     color: $url_shortener_orange;
-    font-size: 28px;
+    font-size: 1.3vw;
   }
   &::-webkit-input-placeholder {
       color: $url_shortener_orange;
-      font-size: 28px;
+      font-size: 1.3vw;
   }
   &:focus {
     outline: none;
@@ -198,12 +190,9 @@ button {
 
 #shortener_container {
   @include set_padding_up_down(13%, 15%);
-  text-align: center;
   background-image: url("./../../Assets/background-home.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  align-items: center;
-  justify-content: center;
 }
 
 #shortener_text {
@@ -212,23 +201,20 @@ button {
 }
 
 #shorten_button {
-  @include set_padding_up_down(15px, 8px);
-  @include set_padding_sides(5px, 5px);
   color: white;
   font-weight: bolder;
-  font-size: 24px;
+  font-size: 1.4vw;
   text-align: center;
   background-color: $url_shortener_orange;
   border: none;
-  height: 60px;
-  width: 10%;
+  height: 3.25vw;
+  width: 10.5vw;
 }
 
 #input_container {
-  @include set_padding_up_down(5%, 0%);
-  display: block;
-  font-size: 28px;
-  text-align: center;
+  @include set_padding_up_down(5vw, 0%);
+  margin-left: 26.5vw;
+  margin-right: 20vw;
 }
 
 #top_5_container {

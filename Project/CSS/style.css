@@ -1,34 +1,32 @@
 .top_5_hits {
-  font-size: 24px;
+  font-size: 1.3vw;
   font-weight: 400;
   float: right;
   color: #777; }
 
 .footer_text {
   color: #AA1423;
-  font-size: 26px; }
+  font-size: 1.4vw; }
 
 .arrow_down {
   width: 0;
   height: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-top: 50px solid white;
+  border-left: 3vw solid transparent;
+  border-right: 3vw solid transparent;
+  border-top: 3vw solid white;
   margin: auto; }
 
 .line_top {
-  width: 35%;
-  border-top: 5px solid;
+  width: 33.5vw;
+  border-top: 0.2vw solid;
   border-color: #FF6E14;
   -moz-border-top-colors: #FF6E14;
-  border-top-width: medium;
-  margin-left: 27%;
   margin-top: -4px; }
 
 .hits_text {
   padding-top: 0%;
   padding-bottom: 5%;
-  font-size: 22px;
+  font-size: 1.2vw;
   font-weight: 400;
   color: #777; }
 
@@ -42,14 +40,12 @@
   padding-top: 0%;
   padding-bottom: 4px;
   color: white;
-  font-size: 28px;
-  font-weight: bold;
-  line-height: 64px; }
+  font-size: 1.4vw;
+  font-weight: bold; }
 
 .input_field {
   color: #FF6E14;
-  font-size: 28px;
-  line-height: 64px; }
+  font-size: 1.4vw; }
 
 .hidden_text_button {
   -webkit-transition: opacity 0.5s;
@@ -58,17 +54,16 @@
   opacity: 0;
   background: none;
   border: none;
-  margin-left: -2%;
+  margin-left: -3vw;
   color: white;
-  font-size: 20px;
+  font-size: 1.1vw;
   font-family: 'Roboto';
   font-weight: bold; }
 
 img.chaordic_logo {
   padding-top: 1%;
   padding-bottom: 0.5%;
-  display: block;
-  margin-left: auto;
+  margin-left: 49vw;
   margin-right: auto; }
 img.footer_image {
   padding-left: 1%;
@@ -76,16 +71,20 @@ img.footer_image {
   float: right; }
 
 p.shortener_intro_text {
-  font-size: 32px; }
+  font-size: 1.65vw; }
+
+ul {
+  width: 35vw;
+  margin: auto; }
 
 li {
   display: block;
   list-style-type: none;
-  font-size: 24px;
+  font-size: 1.35vw;
   font-weight: bold;
   text-align: left;
-  padding-top: 10px;
-  padding-bottom: 10px; }
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw; }
   li.top_5_item {
     border-bottom: 2px solid #EEE; }
 
@@ -95,37 +94,22 @@ body {
 
 h1 {
   font-family: 'Roboto Slab';
-  font-size: 72px; }
+  font-size: 3.7vw; }
 
 h2, h3 {
   font-family: 'Roboto Slab';
   font-weight: 400;
-  font-size: 60px; }
+  font-size: 3.2vw; }
 
 h4 {
   font-family: 'Roboto Slab';
   font-weight: 400;
-  font-size: 60px;
+  font-size: 3.2vw;
   background-color: white;
   border: 1px solid #777;
   border-radius: 10px;
   width: 17%;
   height: auto;
-  left: 0;
-  right: 0;
-  margin: auto; }
-
-input {
-  -webkit-transition: opacity 0.5s;
-  -moz-transition: opacity 0.5s;
-  transition: opacity 0.5s;
-  background: none;
-  border: 0;
-  width: 35%;
-  height: 40px; }
-
-ul {
-  width: 40%;
   margin: auto; }
 
 a {
@@ -138,12 +122,20 @@ footer {
   padding-left: 20%;
   padding-right: 20%; }
 
+input {
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  background: none;
+  border: 0;
+  width: 35vw; }
+
 input::-moz-placeholder, input:-moz-placeholder {
   color: #FF6E14;
-  font-size: 28px; }
+  font-size: 1.3vw; }
 input::-webkit-input-placeholder {
   color: #FF6E14;
-  font-size: 28px; }
+  font-size: 1.3vw; }
 input:focus {
   outline: none; }
 
@@ -156,37 +148,29 @@ button {
 #shortener_container {
   padding-top: 13%;
   padding-bottom: 15%;
-  text-align: center;
   background-image: url("./../../Assets/background-home.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
-  align-items: center;
-  justify-content: center; }
+  background-repeat: no-repeat; }
 
 #shortener_text {
   text-align: center;
   color: white; }
 
 #shorten_button {
-  padding-top: 15px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
   color: white;
   font-weight: bolder;
-  font-size: 24px;
+  font-size: 1.4vw;
   text-align: center;
   background-color: #FF6E14;
   border: none;
-  height: 60px;
-  width: 10%; }
+  height: 3.25vw;
+  width: 10.5vw; }
 
 #input_container {
-  padding-top: 5%;
+  padding-top: 5vw;
   padding-bottom: 0%;
-  display: block;
-  font-size: 28px;
-  text-align: center; }
+  margin-left: 26.5vw;
+  margin-right: 20vw; }
 
 #top_5_container {
   padding-top: 0%;
