@@ -82,7 +82,7 @@ var createTop5List = function(objectArray, listMaxLen)
         //<li>
         listItem = document.createElement("li");
 
-        if (i != 4)
+        if ((i + 1) < listMaxLen)
         {
             //<li class="top_5_item">
             listItem.setAttribute("class", "top_5_item");
